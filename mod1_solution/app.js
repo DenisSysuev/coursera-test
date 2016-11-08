@@ -19,11 +19,11 @@ function MsgController($scope) {
     var color = "green";
     if (count < 1) {
       $scope.lunchMessage = "Please enter data first";
+      color = "red";
     } else if (count < 4) {
       $scope.lunchMessage = "Enjoy!";
     } else {
       $scope.lunchMessage = "Too much!";
-      color = "red";
     }
     $scope.lunchMessageColor = color;
     $scope.lunchMenuColor = color;
