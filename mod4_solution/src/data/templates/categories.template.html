@@ -1,0 +1,15 @@
+<table class="hoverTable">
+  <tr>
+    <th>ID</th>
+    <th>Short Name</th>
+    <th>Name</th>
+    <th>Special Instructions</th>
+  </tr>
+  <tr ng-repeat="item in $ctrl.items"
+      ui-sref="items({category: item.short_name})">
+    <td>{{item.id}}</td>
+    <td>{{item.short_name}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.special_instructions}}</td>
+  </tr>
+</table>
