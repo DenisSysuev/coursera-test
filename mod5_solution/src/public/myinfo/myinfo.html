@@ -1,0 +1,29 @@
+<div class="signup">
+  <div ng-if="myinfoCtrl.isSaved">
+    <div class="form-group">
+      <label>First Name</label>
+      {{myinfoCtrl.user.firstname}}
+    </div>
+    <div class="form-group">
+      <label>Last Name: </label>
+      {{myinfoCtrl.user.lastname}}
+    </div>
+    <div class="form-group">
+      <label>eMail: </label>
+      {{myinfoCtrl.user.email}}
+    </div>
+    <div class="form-group">
+      <label>Phone number: </label>
+      {{myinfoCtrl.user.phonenumber}}
+    </div>
+    <div class="form-group">
+      <label>Favourite dish: </label>
+      <div class="row">
+        <menu-item menu-item="myinfoCtrl.menuItem"></menu-item>
+      </div>
+    </div>
+  </div>
+  <div ng-if="!myinfoCtrl.isSaved" class="text-center">
+    Not Signed Up Yet. <a ng-href="#/signup">Sign up Now!</a>
+  </div>
+</div>

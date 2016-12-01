@@ -1,0 +1,36 @@
+<form name="userForm" ng-submit="signupCtrl.signup()" novalidate>
+  <div>
+    <div class="form-group">
+      <label>First Name</label>
+      <input class="form-control" name="firstname" type="text" ng-model="signupCtrl.user.firstname" autofocus required />
+       <p ng-show="userForm.firstname.$invalid && userForm.firstname.$touched" class="help-block">Your firstname is required.</p>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input class="form-control" name="lastname" type="text" ng-model="signupCtrl.user.lastname" required />
+      <p ng-show="userForm.lastname.$invalid && userForm.lastname.$touched" class="help-block">Your lastname is required.</p>
+    </div>
+    <div class="form-group">
+      <label>eMail</label>
+      <input class="form-control" type="email" name="email" ng-model="signupCtrl.user.email" required />
+      <p ng-show="userForm.email.$invalid && userForm.email.$touched" class="help-block">Enter a valid email.</p>
+    </div>
+    <div class="form-group">
+      <label>Phone number</label>
+      <input class="form-control" name="phonenumber" type="text" ng-model="signupCtrl.user.phonenumber" required />
+      <p ng-show="userForm.phonenumber.$invalid && userForm.phonenumber.$touched" class="help-block">Enter a valid phone number.</p>
+    </div>
+    <div class="form-group">
+      <label>Favourite dish (short name)</label>
+      <input class="form-control" name="favdish" type="text" ng-model="signupCtrl.user.favdish" ng-model-options="{ updateOn: 'blur' }" required favdish />
+      <p ng-show="userForm.favdish.$invalid && userForm.favdish.$touched" class="help-block">No such menu number exists</p>
+      <span ng-show="userForm.favdish.$pending.favdish" class="help-block">Checking if dish is correct...</span>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" ng-disabled="userForm.$invalid">Signup</button>
+    </div>
+  </div>
+  <div ng-show="userForm.$submitted" class="error text-center">
+    Your information has been saved
+  </div>
+</form>
